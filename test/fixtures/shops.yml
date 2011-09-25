@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  make: MyString
+  affiliations: MyString
+  specialties: MyString
+  amenities: MyString
+  phone_number: MyString
+  fax_number: MyString
+  email: MyString
+  website: MyString
+  raw_address: MyString
+  address_1: MyString
+  address_2: MyString
+  city: MyString
+  postal_code: MyString
+  lat: MyString
+  lng: MyString
+
+two:
+  name: MyString
+  make: MyString
+  affiliations: MyString
+  specialties: MyString
+  amenities: MyString
+  phone_number: MyString
+  fax_number: MyString
+  email: MyString
+  website: MyString
+  raw_address: MyString
+  address_1: MyString
+  address_2: MyString
+  city: MyString
+  postal_code: MyString
+  lat: MyString
+  lng: MyString
