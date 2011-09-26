@@ -1,0 +1,54 @@
+<div id='panel-title'>Search</div>
+
+<div id='panel-body'>
+	<% form_tag(parts_part_number_url) do %>
+		Find a Part Number:<br/>
+		<%= text_field_tag(:part_number, params[:part_number]) %>
+		<%= submit_tag "Search" %>
+	<% end %>
+		
+	<% if @brands_filter_list %>
+		<p>
+		<h3>Brands</h3>
+		<%= link_to "Show All", parts_path %><br/><br/>
+		<% @brands_filter_list.each do |brand_filter| %> 
+        <%= link_to brand_filter.name, parts_index_by_brand_url( brand_filter.id ) %><br/>
+		<% end %>
+		<p/>
+	<% end %>
+	
+	<p>
+	<% if @categories %>
+	<h3>Categories</h3>
+	<% @categories.each do |category| %>
+		<% if ! category.parent %>
+			<% if @category && @category == category %>
+				<div id='selected_category'>				
+			<% else %>
+				<div id='unselected_category'>
+			<% end %>
+					<%= link_to category.name, parts_category_url( category.name ) %><br/>
+				</div>
+					<%= render :partial => 'categories/category', 
+							   :collection => category.children, 
+							   :locals => { :spacing => 15, :chosen => @category } %>
+		<% end %>
+	<% end %>
+	<% end %>
+	</p>
+	
+	<br/><br/>
+	<h3>Find an order</h3>
+	<% form_tag(orders_search_path) do %>
+	<p>
+		Purchase Order Number:<br/>
+		<%= text_field_tag(:order_id, @order_id) %>
+	</p>
+	<p>
+		Email:<br/>
+		<%= text_field_tag(:buyer_email, @buyer_email) %>
+	</p>
+		<%= submit_tag "Find Order" %>
+	<% end %>
+
+</div>

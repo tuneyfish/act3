@@ -9,6 +9,10 @@ gem 'mysql2'
 
 gem 'activeadmin'
 
+gem 'geokit', '>= 1.5.0'
+gem 'geokit-rails31'
+gem 'json_pure'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

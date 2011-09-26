@@ -1,0 +1,9 @@
+<tr class="<%= cycle :odd, :even %>">
+  <td class="name">
+  	<%= link_to cart_item_with_shipping.part.name, parts_part_number_path(cart_item_with_shipping.part.part_number) %><br/>
+	<small><%=h cart_item_with_shipping.part.part_number%></small>
+  </td>
+  <td class="qty"><%= cart_item_with_shipping.quantity %></td>
+  <td class="shipping"><%= number_to_currency(cart_item_with_shipping.quantity) %></td>
+  <td class="price"><%= number_to_currency(cart_item_with_shipping.item_price) %><br/><small><%= link_to 'Remove', cart_item_with_shipping, :method => :delete %></small></td>
+</tr>

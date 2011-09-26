@@ -1,53 +1,46 @@
-<h1>Listing shops</h1>
+<% if @shops && @shops.length > 0 %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Make</th>
-    <th>Affiliations</th>
-    <th>Specialties</th>
-    <th>Amenities</th>
-    <th>Phone number</th>
-    <th>Fax number</th>
-    <th>Email</th>
-    <th>Website</th>
-    <th>Raw address</th>
-    <th>Address 1</th>
-    <th>Address 2</th>
-    <th>City</th>
-    <th>Postal code</th>
-    <th>Lat</th>
-    <th>Lng</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="map">
+  <div id="map_wait_text">
+    <b>Waiting on Google Maps</b>
+    <br/>
+    Try refreshing your browser if it's taking to long
+  </div>
+</div>
 
-<% @shops.each do |shop| %>
-  <tr>
-    <td><%= shop.name %></td>
-    <td><%= shop.make %></td>
-    <td><%= shop.affiliations %></td>
-    <td><%= shop.specialties %></td>
-    <td><%= shop.amenities %></td>
-    <td><%= shop.phone_number %></td>
-    <td><%= shop.fax_number %></td>
-    <td><%= shop.email %></td>
-    <td><%= shop.website %></td>
-    <td><%= shop.raw_address %></td>
-    <td><%= shop.address_1 %></td>
-    <td><%= shop.address_2 %></td>
-    <td><%= shop.city %></td>
-    <td><%= shop.postal_code %></td>
-    <td><%= shop.lat %></td>
-    <td><%= shop.lng %></td>
-    <td><%= link_to 'Show', shop %></td>
-    <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
-    <td><%= link_to 'Destroy', shop, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
 <% end %>
-</table>
 
-<br />
+<h1>Shop Listings</h1>
 
-<%= link_to 'New Shop', new_shop_path %>
+  <% form_tag(find_shops_path) do %>
+      Postal Code: <%= text_field_tag(:zip, @zip, :size => 5) %>
+      Distance: <%= text_field_tag(:distance, @distance, :size => 2 ) %>
+      <%= submit_tag "Find Shops" %>
+  <% end %>
+
+<br/><br/>
+
+<% if @shops && @shops.length > 0 %>
+
+  <% @shops.each do |shop| %>
+    <b><%= link_to shop.name, shop %></b><br/>
+    <%=h shop.full_address %> - <%=h shop.phone_number %><br/>
+  <% end %>
+
+  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=<%= GOOGLE_MAPS_KEY %>" type="text/javascript"></script>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'location_list' %>
+  <script type="text/javascript">
+    var shops = <%= ( raw @shops.collect {|l|l.attributes} ).to_json %>;
+    var centerLat = <%=h @centerLat %>
+    var centerLng = <%=h @centerLng %>
+  </script>
+
+<% else %>
+  <% if @zip %>
+    No shops found for the Postal Code <%=h @zip %>
+  <% else %>
+    Choose a Postal Code
+  <% end %>
+<% end %>
+

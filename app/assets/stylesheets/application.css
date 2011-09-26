@@ -5,3 +5,230 @@
  *= require_self
  *= require_tree . 
 */
+
+body {
+    background-color: #FFF;
+    font-family: Verdana, Helvetica, Arial;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+
+a img {
+    border: none;
+}
+
+a {
+    color: #0000FF;
+}
+
+/* LAYOUT ============================= */
+
+.center {
+    text-align: center;
+}
+
+#top {
+    padding: 5px;
+    background-color: #fff;
+}
+
+#bottom {
+    border-top: 1px solid #788791;
+    padding: 3px 0;
+    margin: 20px auto;
+    font-size: 11px;
+    color: #777;
+}
+
+#navigation {
+    background-color: #3E464B;
+    border-bottom: 7px solid #F27300;
+}
+
+#navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#navigation ul li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+#navigation ul li a {
+    padding: 6px 15px;
+    font-size: 15px;
+    line-height: 32px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#navigation ul li a:hover {
+    background-color: #5D6971;
+}
+
+#navigation ul li.active a {
+    background-color: #788791;
+}
+
+#navigation ul li.active a:hover {
+    background-color: #788791;
+}
+
+#container-app {
+    padding-top: 5px;
+    background-color: #FFF;
+    min-height: 350px;
+}
+
+/* COMMON ============================= */
+
+div.width_adjuster {
+    margin: 0 auto;
+    text-align: left;
+    width: 75%;
+    min-width: 800px;
+}
+
+#flash_notice, #flash_error {
+    padding: 5px 8px;
+    margin: 10px 0;
+}
+
+#flash_notice {
+    background-color: #CFC;
+    border: solid 1px #6C6;
+}
+
+#flash_error {
+    background-color: #FCC;
+    border: solid 1px #C66;
+}
+
+.clear {
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/*  ERRORS ================================ */
+
+.fieldWithErrors {
+    display: inline;
+}
+
+#errorExplanation {
+    width: 400px;
+    border: 2px solid #CF0000;
+    padding: 0px;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: 0px;
+    background-color: #c00;
+    color: #fff;
+}
+
+#errorExplanation p {
+    color: #333;
+    margin-bottom: 0;
+    padding: 8px;
+}
+#errorExplanation ul {
+    margin: 2px 24px;
+}
+#errorExplanation ul li {
+    font-size: 12px;
+    list-style: disc;
+}
+
+/* FORMS ============================ */
+
+form p {
+    margin: 0; padding: 5px;
+    border-top: 1px solid #ddd;
+}
+label {
+    width: 150px;
+    float: left;
+    font-size: 1.2em;
+    margin-top: 9px;
+}
+
+*:focus {
+    outline-style: none;
+}
+
+input.text, input.password, textarea {
+    background-color: #ffffff;
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-x-position: 0%;
+    background-y-position: 0%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #dddddd;
+    padding: 4px;
+}
+
+input.password:hover, input.text:hover, textarea:hover {
+    border-color: #bbbbbb;
+}
+
+input.password:focus, input.text:focus, textarea:focus {
+    border-color: #887934;
+}
+
+input.submit, input.submit:focus {
+    background-color: #f27300;
+    background-image: url(/images/gloss.png);
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+    background-x-position: 0pt;
+    background-y-position: 50%;
+    border-width: 2px;
+    border-style: outset;
+    border-color: #D16D12;
+    color: #000;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 4px 4px;
+    margin: 5px 0 20px 0;
+}
+
+input.submit:hover {
+    background-color: #D16D12;
+    border-color: #D16D12;
+}
+
+
+/*  TABLES   ========================================== */
+
+#body .geo {border-left: 1px solid #c1c1c1; border-top: 1px solid #c1c1c1; clear: both; width: 100%;}
+#body .geo td {border-bottom: 1px solid #c1c1c1; border-right: 1px solid #c1c1c1; color: #808080; font-family: georgia; font-size: 12px; padding: 10px;}
+#body .geo td:hover {background-color: #ffffcc;}
+#body .geo td a {font-size: 15px;}
+#body .geo td a:hover {color: #0000cd; text-decoration: underline;}

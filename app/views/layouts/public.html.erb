@@ -1,0 +1,60 @@
+<!doctype>
+<html>
+  <head>
+    <title>How To Work On Cars - Car Repair And Car Dealer Directory</title>
+    <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag 'default' %>
+    <%= javascript_include_tag :defaults %>
+ </head>
+  
+    <div id="wrapper">
+      <div id="top" class="center">
+    	<div class="width_adjuster">
+    		<div class="left">
+    		  How To Work on Cars
+    		</div>
+    		<div class="right">
+    		  Find Car Dealers - Car Repair Shops
+    		</div>
+    		<div class="clear"></div>
+    	  </div>
+    	</div>
+      <div id="navigation" class="center">
+      	<div class="width_adjuster">
+      	  <ul>
+      	    <li class="active"><%= link_to "Home", parts_path %></li>
+      	    <li><%= link_to "Dealers", "car-dealers/" %></li>
+      	    <li><%= link_to "Shops", shops_path %></li>
+      	    <li><%= link_to "Parts", parts_path %></li>
+      	    <li><%= link_to "About", about_path %></li>
+      	  </ul>
+      	</div>
+      </div>
+      <div id="body">
+          <div id="container" class="center">
+        <div class="width_adjuster">
+         
+             
+
+        	<% flash.each do |name, msg| %>
+        		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+        	  <% end %>
+        	  
+        	  
+        	  <%= yield %>
+        	  
+        	  </div></div></div>
+
+        	 <div id="foot"> <div class="bar1"></div> <div class="legal"><a href="#" onClick="OpenVeilUrl('750px','Privacy Statement','http://localhost:3000/privacy/'); return false;" title="Privacy Statement">Privacy Statement</a> | <a href="#" onClick="OpenVeilUrl('750px','Terms of Use','http://localhost:3000/terms/'); return false;" title="Terms of Use">Terms of Use</a></div> <div class="copy">Copyright &copy; 2011 <a href="http://www.howtoworkoncars.com">HTWOC</a> LLC. All rights reserved.</div> <div class="bar2"></div> <div class="sites"></div> </div> <div id="veil"></div> <div id="veilBox"> <div id="veilHead"></div> <div id="veilBody"></div> </div> <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-8647921-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script></body> </html>

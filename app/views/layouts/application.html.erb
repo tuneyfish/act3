@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Act3</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+ <title>How To Work On Cars - Car Repair And Car Dealer Directory</title>
+    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag 'default' %>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="top" class="center">
+    	<div class="width_adjuster">
+    		<div class="left">
+    		  How To Work on Cars
+    		</div>
+    		<div class="right">
+    		  Find Car Dealers - Car Repair Shops
+    		</div>
+    		<div class="clear"></div>
+    	  </div>
+    	</div>
+      <div id="navigation" class="center">
+      	<div class="width_adjuster">
+      	  <ul>
+      	   <li><%= link_to "Admin", admin_shops_path %></li>
+							<li><%= link_to "People", admin_shops_path %></li>
+							<li><%= link_to "Order Reports", admin_shops_path %></li>
+							<li><%= link_to "Orders", admin_shops_path %></li>
+							<li><%= link_to "Price Quotes", admin_shops_path %></li>
+							<li><%= link_to "Parts", admin_shops_path %></li>
+							<li><%= link_to "Distributors", admin_shops_path %></li>
+							<li><%= link_to "Brands", admin_shops_path %></li>      	  </ul>
+      	</div>
+      </div>
+      <div id="container" class="center">
+        <div class="width_adjuster">
+        	<% flash.each do |name, msg| %>
+        		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+        	  <% end %>
+        	  <%= yield %>
+        	</div>
+          </div>
+        <div id="bottom" class="center width_adjuster">
+        	<div class="left">
+        	2011 &copy HTWOC
+        	</div>
+        	<div class="right">
+        	Privacy Policy
+        	</div>
+        	<div class="clear"></div>
+          </div>
+       </div>
+  </body>
 </html>

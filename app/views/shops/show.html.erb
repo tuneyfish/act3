@@ -1,85 +1,31 @@
-<p id="notice"><%= notice %></p>
+<br />
+
+<h3><%=h @shop.name %></h3>
 
 <p>
-  <b>Name:</b>
-  <%= @shop.name %>
-</p>
-
-<p>
-  <b>Make:</b>
-  <%= @shop.make %>
-</p>
-
-<p>
-  <b>Affiliations:</b>
-  <%= @shop.affiliations %>
-</p>
-
-<p>
-  <b>Specialties:</b>
-  <%= @shop.specialties %>
-</p>
-
-<p>
-  <b>Amenities:</b>
-  <%= @shop.amenities %>
-</p>
-
-<p>
-  <b>Phone number:</b>
   <%= @shop.phone_number %>
 </p>
 
 <p>
-  <b>Fax number:</b>
-  <%= @shop.fax_number %>
+<%=h @shop.full_address %>
 </p>
 
 <p>
-  <b>Email:</b>
-  <%= @shop.email %>
+
+<br />
+
+<%= link_to 'Search for other Shops', shops_path %>
 </p>
+<div id="map" style="width:300px; height:350px">
+  <div id="map_wait_text">
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=<%= GOOGLE_MAPS_KEY %>" type="text/javascript"></script>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'location_list' %>
+    <script type="text/javascript">
+      var shops = new Array();
+      shops[0] = <%= raw @shop.attributes.to_json %>;
+    </script>
+ </div>
+</div>
 
-<p>
-  <b>Website:</b>
-  <%= @shop.website %>
-</p>
-
-<p>
-  <b>Raw address:</b>
-  <%= @shop.raw_address %>
-</p>
-
-<p>
-  <b>Address 1:</b>
-  <%= @shop.address_1 %>
-</p>
-
-<p>
-  <b>Address 2:</b>
-  <%= @shop.address_2 %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @shop.city %>
-</p>
-
-<p>
-  <b>Postal code:</b>
-  <%= @shop.postal_code %>
-</p>
-
-<p>
-  <b>Lat:</b>
-  <%= @shop.lat %>
-</p>
-
-<p>
-  <b>Lng:</b>
-  <%= @shop.lng %>
-</p>
-
-
-<%= link_to 'Edit', edit_shop_path(@shop) %> |
-<%= link_to 'Back', shops_path %>
+<br/>

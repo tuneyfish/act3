@@ -1,0 +1,115 @@
+body {background: #ffffff; font: normal 0.95em tahoma, verdana, arial, sans-serif; margin: 15px 0 50px 0; padding: 0;}
+a {color: #0000cd; text-decoration: none;}
+a:hover {color: #cd0000;}
+h1 {font-family: Helvetica; font-size: 24px; margin: 0 0 10px 0;}
+img.track {display: none; height: 1px; width: 1px;}
+input[type=radio] {cursor: pointer;}
+input[type=submit] {font-family: helvetica; font-size: 16px; font-weight: bold; height: 34px;}
+label {cursor: pointer; margin-left: 5px;}
+p {font-family: helvetica; font-size: 16px; line-height: 1.4em; margin: 0;}
+p span.location {font-style: italic; text-decoration: underline;}
+
+#adv {float: right; margin: 0 0 15px 15px;}
+
+#adv2 {margin: 15px auto 15px 0px; width: 728px;}
+
+#advBtm {font-size: 10px; margin-top: 7px; text-align: center;}
+#advBtm a {color: #ffffff;}
+
+#advTop {color: #ffffff; font-size: 11px; margin-bottom: 8px; text-align: center;}
+
+#body {margin: 15px auto 15px auto; width: 770px;}
+
+#body .back {font-family: 'helvetica'; margin-bottom: 15px;}
+#body .back a:hover {color: #0000cd; text-decoration: underline;}
+
+#body .caption {clear: both; color: #808080; font: italic 0.75em arial; margin: 15px 0 0 0; padding: 10px 100px 10px 100px; text-align: center;}
+
+#body .carDealers {border: 1px solid #c1c1c1; clear: both; margin: 0; padding: 0 0 15px 0; text-align: center;}
+#body .carDealers h2 {color: #800000; margin-bottom: 10px;}
+#body .carDealers img {height: 359px; width: 474px;}
+
+#body .categories {width: 419px;}
+#body .categories tr {vertical-align: top;}
+#body .categories tr td {width: 50%;}
+#body .categories ul {list-style-type: none; margin: 0; padding: 0;}
+#body .categories ul li {font: bold 20px helvetica, verdana, arial, sans-serif; margin: 30px 0 0 0; padding: 0 0 0 0;}
+#body .categories ul li a {background: transparent no-repeat 0 5px; padding-left: 23px;}
+#body .categories ul li a:hover {color: #0000cd; text-decoration: underline;}
+#body .categories ul li.carLease a {background-image: url('');}
+#body .categories ul li.extendedAutoWarranty a {background-image: url('');}
+#body .categories ul li.newCars a {background-image: url('');}
+#body .categories ul li.sellCar a {background-image: url('');}
+#body .categories ul li.usedCars a {background-image: url('');}
+#body .categories ul li.autoParts a {background-image: url('');}
+
+#body .company {border-left: 1px solid #c1c1c1; border-top: 1px solid #c1c1c1; clear: both; width: 100%;}
+#body .company td {border-bottom: 1px solid #c1c1c1; border-right: 1px solid #c1c1c1; padding: 10px; vertical-align: top;}
+#body .company td:hover {background-color: #ffffcc;}
+
+#body .geo {border-left: 1px solid #c1c1c1; border-top: 1px solid #c1c1c1; clear: both; width: 100%;}
+#body .geo td {border-bottom: 1px solid #c1c1c1; border-right: 1px solid #c1c1c1; color: #808080; font-family: georgia; font-size: 12px; padding: 10px;}
+#body .geo td:hover {background-color: #ffffcc;}
+#body .geo td a {font-size: 15px;}
+#body .geo td a:hover {color: #0000cd; text-decoration: underline;}
+
+#body .vendors {border-left: 1px solid #c1c1c1; border-top: 1px solid #c1c1c1; clear: both; width: 100%;}
+#body .vendors td {border-bottom: 1px solid #c1c1c1; border-right: 1px solid #c1c1c1; padding: 10px;}
+#body .vendors td.currency {text-align: right;}
+#body .vendors td.stars {text-align: center; white-space: nowrap;}
+#body .vendors td.stars img {border: 0; height: 16px; width: 88px;}
+#body .vendors th {background-color: #f5f5f5; border-bottom: 1px solid #c1c1c1; border-right: 1px solid #c1c1c1; padding: 5px; text-align: center;}
+
+#foot {clear: both; color: #808080; font: normal 0.75em verdana, arial, sans-serif; margin: 0 auto 0 auto; width: 770px;}
+#foot .bar1 {background-color: #c1c1c1; height: 1px;}
+#foot .bar2 {border-top: 1px solid #c1c1c1; clear: both; height: 1px;}
+#foot .copy {background-color: #fafafa; padding: 5px 0 5px 5px;}
+#foot .copy a {color: #808080;}
+#foot .legal {float: right; margin-top: 5px; padding: 0 5px 0 0;}
+#foot .sites {font: normal 1em tahoma, verdana, arial, sans-serif; margin-top: 10px; text-align: center;}
+
+#head {height: 26px; margin: 0 auto 0 auto; width: 770px;}
+#head .logo img {border: 0; height: 26px; width: 127px;}
+#head .text {float: right; height: 20px; margin-top: 5px; padding-top: 1px; text-align: center; width: 573px;}
+#head .text a {background: transparent url('') no-repeat 3px 4px; font: normal 12px verdana, arial, sans-serif; padding: 5px 0 1px 24px;}
+#head .text a:hover {color: #0000cd; text-decoration: underline;}
+
+#legal {background-color: #ffffff; border: 1px solid #c1c1c1; font-size: 1em; height: 350px; margin-top: 10px; overflow: auto; padding: 10px;}
+#legal h1 {font-size: 2.00em; margin-top: 0;}
+#legal h2 {font-size: 1.50em;}
+#legal .list {list-style-type: upper-alpha;}
+
+#mapCanvas {background-color: #f5f5f5; height: 280px; width: 419px;}
+
+#nav {clear: both; margin: 14px auto 0 auto; width: 100%;}
+
+#nav .bar1 {background-color: #f2600c; clear: both; height: 4px;}
+#nav .bar2 {background-color: #ececec; height: 4px;}
+#nav .bar3 {background-color: #c1c1c1; height: 1px;}
+
+#nav .tab {font: bold 13px tahoma, verdana, arial, sans-serif; margin: 0 3px 0 300px;}
+#nav .tab a {cursor: pointer;}
+#nav .tab a:hover {color: #0000cd;}
+#nav .tab .lft {background: transparent url('') no-repeat; float: left; height: 26px; width: 10px;}
+#nav .tab .mid {background: transparent url('') repeat-x 0 0; float: left; height: 20px; padding: 6px 0 0 0;}
+#nav .tab .rgt {background: transparent url('') no-repeat; float: left; height: 26px; margin-right: 3px; width: 10px;}
+
+#nav .tab:hover .lft {background-image: url('');}
+#nav .tab:hover .mid {background-image: url('');}
+#nav .tab:hover .rgt {background-image: url('');}
+
+#nav .tab.on a {color: #ffffff;}
+#nav .tab.on .lft {background: transparent url('') no-repeat;}
+#nav .tab.on .mid {background: transparent url('') repeat-x 0 0;}
+#nav .tab.on .rgt {background: transparent url('') no-repeat;}
+
+#veil {background: #000000 url(''); filter: progid:DXImageTransform.Microsoft.alpha(opacity=75); opacity: 0.75; position: absolute; right: 0; top: 0; visibility: hidden; width: 10px; z-index: 99;}
+#veil.adv {background-image: none; filter: progid:DXImageTransform.Microsoft.alpha(opacity=100); opacity: 1.00;}
+#veilBox {background-color: #f5f5f5; border: 0; clear: right; left: 0; padding: 10px; position: absolute; top: 0; visibility: hidden; z-index: 100;}
+#veilBox.adv {background-color: #000000; border: 0; height: 325px; margin-top: -60px; padding: 0; width: 336px;}
+#veilBody {border: 0;}
+#veilBody .std {font-size: 20px; padding: 20px;}
+#veilBody a {color: #1e90ff; text-decoration: underline;}
+#veilBody a:hover {color: #ffd700; text-decoration: underline;}
+#veilHead {color: #f2600c; font: bold 15px tahoma, verdana, arial, sans-serif;}
+#veilX {cursor: pointer; float: right; height: 20px; width: 20px;}

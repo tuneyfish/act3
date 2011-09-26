@@ -4,6 +4,8 @@ Act3::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :shops
+  
+  resources :find_shops
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

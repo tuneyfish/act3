@@ -1,0 +1,9 @@
+<tr class="<%= cycle :odd, :even %>">
+  <td class="name">
+  	<%= link_to cart_item.part.name, parts_part_number_path(cart_item.part.part_number) %><br/>
+	<small><%=h cart_item.part.part_number%></small>
+  </td>
+  <td class="qty"><%= cart_item.quantity %></td>
+  <td class="price"><%= number_to_currency(cart_item.full_sale_price) %><br/><small>
+  <%= link_to 'Remove', remove_from_cart_path(:item_id => cart_item) %></small></td>
+</tr>

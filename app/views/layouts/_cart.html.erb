@@ -1,0 +1,53 @@
+<div id="cart-header">
+	<table width='100%'>
+		<tr>
+			<td>
+				<div id="panel-title">
+					Shopping Cart
+				</div>
+				<!--
+				<small>
+					<%= link_to_function "[Show/Hide Items]" do |page|
+			    			page['items'].toggle
+						end
+					%>	
+				</small>
+				-->
+			</td>
+			<td align='right'>
+				<div id="cart_stats">
+					Items: <%= @cart.size %><br/>
+					Total: <%= number_to_currency @cart.total_price %>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div id='panel-body'>
+<table id="items">
+  <tr>
+    <th class="name">Part</th>
+    <th class="qty">Qty</th>
+    <th class="price">Price</th>
+  </tr>
+  
+  <div id="cart_itemabc">
+  	<%= render :partial => 'layouts/cart_item', :collection => @cart.items %>
+  </div>
+  
+<!--  
+  <tr>
+    <td class="total price" colspan="4">
+      Total: <%= number_to_currency @cart.total_price %>
+    </td>
+  </tr>
+-->
+</table>
+
+<p>
+  <div id='cart-checkout'>
+    <%= link_to "Checkout", new_person_for_order_path %>
+  </div>
+</p>
+</div>

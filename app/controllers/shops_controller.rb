@@ -1,17 +1,57 @@
 class ShopsController < ApplicationController
   # GET /shops
-  # GET /shops.json
+  # GET /shops.xml
   def index
-    @shops = Shop.all
+    @zip = params[:zip]
+    @distance = params[:distance]
+    
+    if @zip && @distance 
+      @shops = Shop.find(:all, :origin => @zip, :conditions => ["distance < ?", @distance])
+      logger.debug( "found #{@shops.length} shops" )
+
+      if @shops.length == 0
+        geo = GeoKit::Geocoders::MultiGeocoder.geocode( @zip )
+        errors.add(:address, "Could not Geocode address") if !geo.success
+        @centerLat, @centerLng = geo.lat,geo.lng if geo.success
+      else
+        @centerLat = @shops[0].lat
+        @centerLng = @shops[0].lng
+      end
+    else
+      @shops = []
+
+      geo = GeoKit::Geocoders::IpGeocoder.geocode(request.remote_ip)
+      if geo.success
+        @centerLat, @centerLng = geo.lat,geo.lng 
+      else
+        logger.debug( "unable to geocode remote ip" )
+        @centerLat = 42 
+        @centerLng = -120 
+      end
+    end
+
+    if @distance.nil?
+      @distance = 5
+    end
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @shops }
     end
   end
+  
+   def geocode_shops
+    @shops_to_geocode = Shop.fetch_not_geocoded
+    cnt = 0
+    for shop in @shops_to_geocode
+      shop.geocode_raw_address
+      shop.save!
+    end
+    redirect_to :action => 'admin_index'
+  end
 
   # GET /shops/1
-  # GET /shops/1.json
+  # GET /shops/1.xml
   def show
     @shop = Shop.find(params[:id])
 
@@ -22,7 +62,7 @@ class ShopsController < ApplicationController
   end
 
   # GET /shops/new
-  # GET /shops/new.json
+  # GET /shops/new.xml
   def new
     @shop = Shop.new
 
@@ -38,7 +78,7 @@ class ShopsController < ApplicationController
   end
 
   # POST /shops
-  # POST /shops.json
+  # POST /shops.xml
   def create
     @shop = Shop.new(params[:shop])
 
@@ -54,7 +94,7 @@ class ShopsController < ApplicationController
   end
 
   # PUT /shops/1
-  # PUT /shops/1.json
+  # PUT /shops/1.xml
   def update
     @shop = Shop.find(params[:id])
 
@@ -70,7 +110,7 @@ class ShopsController < ApplicationController
   end
 
   # DELETE /shops/1
-  # DELETE /shops/1.json
+  # DELETE /shops/1.xml
   def destroy
     @shop = Shop.find(params[:id])
     @shop.destroy
